@@ -1,7 +1,8 @@
 <div id="<%= dom_id list_item %>">
   <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= list_item.name %>
+    |||
+    <%= link_to "[E]", [:edit, list_item] %>
+    <%= link_to "[D]", list_item, method: :delete %>
+    <%= link_to list_item.name, list_item %>
   </p>
-
 </div>
