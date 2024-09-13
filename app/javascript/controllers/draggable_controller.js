@@ -6,6 +6,7 @@ export default class extends Controller {
 
   #draggedElement
   #nearestElement
+  #dropzoneElement = document.getElementById('dropzone')
 
   dragStart(event) {
     event.target.style.opacity = 0.4
@@ -23,6 +24,7 @@ export default class extends Controller {
     console.log("Dragged Element:", this.draggedElement)
 
     event.target.style.opacity = 1
+    this.#dropzoneElement.classList.add("hidden")
   }
 
   dragEnter(event) {
@@ -53,8 +55,6 @@ export default class extends Controller {
     const draggedItemHtml = event.dataTransfer.getData('text/html')
     console.log("draggedItemId:", draggedItemId)
     console.log("draggedItemHtml:", draggedItemHtml)
-
-    this.#dropzoneElement.classList.add("hidden")
   }
 
   #repositionDropzone(event) {
@@ -69,6 +69,4 @@ export default class extends Controller {
       nearestElement.insertAdjacentElement('afterend', this.#dropzoneElement)
     }
   }
-
-  #dropzoneElement = document.getElementById('dropzone')
 }
