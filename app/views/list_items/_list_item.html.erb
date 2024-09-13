@@ -1,4 +1,19 @@
-<div id="<%= dom_id list_item %>">
+<div id="<%= dom_id list_item %>"
+  draggable=true
+  data-controller="draggable"
+  data-target="line-item"
+  data-action="
+    dragstart->draggable#dragStart
+    dragend->draggable#dragEnd
+    dragenter->draggable#dragEnter
+    dragleave->draggable#dragLeave
+    dragover->draggable#dragOver
+    drop->draggable#drop
+  "
+  data-draggable-id=<%= list_item.id %>
+  data-draggable-class="ListItem"
+  data-draggable-position=<%= list_item.position_score %>
+>
   <p class="my-5">
     |||
     <%= link_to "[E]", [:edit, list_item] %>
