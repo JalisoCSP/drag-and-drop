@@ -50,6 +50,7 @@ export default class extends Controller {
   }
 
   drop(event) {
+    // Drop doesn't work unless you drop it into a list-item element ?
     console.log("DROP")
     const draggedItemId = event.dataTransfer.getData('text/plain')
     const draggedItemHtml = event.dataTransfer.getData('text/html')
