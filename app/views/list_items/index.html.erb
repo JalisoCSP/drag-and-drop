@@ -10,10 +10,10 @@
     <%= link_to "New list item", new_list_item_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="list_items" class="min-w-full">
+  <ul id="list_items" class="list-none min-w-full">
     <%= render @list_items %>
 
-    <div id="dropzone" class="hidden mx-auto max-w-7xl">
+    <li id="dropzone" class="hidden mx-auto max-w-7xl">
       <x-placeholder>
         <div class="relative h-4 overflow-hidden rounded-xl border border-dashed border-gray-400 opacity-75">
           <svg class="absolute inset-0 h-full w-full stroke-gray-900/10" fill="none">
@@ -26,7 +26,7 @@
           </svg>
         </div>
       </x-placeholder>
-    </div>
+    </li>
 
-  </div>
+  </ul>
 </div>
