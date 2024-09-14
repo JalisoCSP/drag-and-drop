@@ -9,9 +9,6 @@ export default class extends Controller {
   #dropzoneElement = document.getElementById('dropzone')
 
   dragStart(event) {
-    event.target.style.opacity = 0.4
-
-    // set draggedElement
     this.#draggedElement = event.target
     event.dataTransfer.setData('text/plain', event.target.dataset.draggableId)
     event.dataTransfer.setData("text/html", event.target.innerHTML)
@@ -23,7 +20,6 @@ export default class extends Controller {
     console.log("DRAG END")
     console.log("Dragged Element:", this.draggedElement)
 
-    event.target.style.opacity = 1
     this.#dropzoneElement.classList.add("hidden")
   }
 
