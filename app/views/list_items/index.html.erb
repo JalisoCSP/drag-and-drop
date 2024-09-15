@@ -10,7 +10,7 @@
     <%= link_to "New list item", new_list_item_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <ul id="list_items" class="list-none min-w-full">
+  <ul id="list_items" class="list-none min-w-full" data-controller="draggable">
     <%= render @list_items %>
 
     <li id="dropzone" class="hidden mx-auto max-w-7xl my-5">
